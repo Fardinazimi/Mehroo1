@@ -12,6 +12,8 @@ export default function HeroSlider() {
 
   return (
     <>
+
+   
     <div className='pt-0.5'>
     <Carousel fade interval={2000}> {/* 5000ms = 5 seconds */}
       {slides.map((url, index) => (
