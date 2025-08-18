@@ -16,9 +16,10 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://wscubetech.co/ecommerce-api/products.php",{
+      .get("https://wscubetech.co/ecommerce-api/products.php" ,{
         params: {
           limit: 30, // Limit the number of products to 9
+          
           
         },
       })
@@ -40,10 +41,13 @@ export default function Home() {
       <div className="container bg-white mx-auto">
         <div className="row">
 
+
+
+            <h1>productCard</h1>
           {
 
             products.map((data,index)=>{
-
+                    
 
 
                 return (
