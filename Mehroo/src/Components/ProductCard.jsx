@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function ProductCard({ column , productData}) {
   return (
+
     <>
+    
       <div
         className={
           column == 4
@@ -41,7 +43,11 @@ export default function ProductCard({ column , productData}) {
           <span className="fas fa-star"></span>{" "}
           <span className="fas fa-star"></span>{" "}
         </div>
-        <div className="price">{productData.price}</div>
+        {/* <div className="price"> {productData.price}</div> */}
+                <div className="price"><span className="badge bg-success fs-6 p-2 mt-2">
+                € {productData.price}
+              </span> </div>
+
       </Link>
       </div>
     </>

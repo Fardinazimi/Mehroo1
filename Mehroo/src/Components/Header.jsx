@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/images/logo.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { ListGroupItem } from "react-bootstrap";
 
 export default function Header() {
   const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Categories"); // default text
 
   useEffect(() => {
     axios
-      .get("https://wscubetech.co/ecommerce-api/categories.php" )
+      .get("https://wscubetech.co/ecommerce-api/categories.php")
       .then((result) => {
         setCategories(result.data.data);
       })
@@ -17,6 +17,10 @@ export default function Header() {
         console.error("Error fetching data:", error);
       });
   }, []);
+
+  const handleCategorySelect = (name) => {
+    setSelectedCategory(name); // set selected category
+  };
 
   return (
     <>
@@ -49,23 +53,39 @@ export default function Header() {
                   aria-current="page"
                   to="/product-listings"
                 >
-                 Home
+                  All Products
                 </Link>
               </li>
-              {categories.map((v, i) => {
-                return i < 8 ? (
-                  <li className="nav-item"key={v.id || i}>
-                    <Link
-                      className="nav-link"
-                      to={`/product-listings/${v.slug}`}
-                    >
-                      {v.name}
+
+              {/* Dropdown for Categories */}
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="categoriesDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {selectedCategory} {/* Show selected category */}
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="categoriesDropdown"
+                >
+                  {categories.slice(0, 8).map((v, i) => (
+                    <li key={v.id || i}>
+                      <Link
+                        className="dropdown-item"
+                        to={`/product-listings/${v.slug}`}
+                        onClick={() => handleCategorySelect(v.name)} // update dropdown text
+                      >
+                        {v.name}
                       </Link>
-                  </li>
-                ) : (
-                  ""
-                );
-              })}
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
 
             {/* Sign in & Register buttons */}
