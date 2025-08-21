@@ -33,7 +33,8 @@ export default function ProductDetail() {
 
   return (
     <>
-      <Header />
+    <Header />
+     
       {productDetails ? (
         <div className="container my-5">
           <div className="row details-snippet1">
@@ -66,7 +67,7 @@ export default function ProductDetail() {
                 productDetails.multiple_images.map((v,i)=>{
                     return(
 
-                        <img className="img-fluid" onClick={()=>imageHandler (v)} src={v} alt="Preview"/>
+                        <img className="img-fluid" onMouseOver={()=>imageHandler (v)} src={v} alt="Preview"/>
                     )
                 })
             }

@@ -8,19 +8,30 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import Home from "./Components/Home";
 import ProductListing from "./Components/ProductListing";
 import ProductDetail from "./Components/ProductDetail";
-
+import ContextApi from "./ContextApi/ContextApi";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/product-listings/:slug?" element={<ProductListing />} />
-      <Route path="/product-details/:id" element={<ProductDetail />} />
-    
-
-    </Routes>
+  <ContextApi>
 
 
-  </BrowserRouter>
+
+
+    <BrowserRouter>
+
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product-listings/:slug?" element={<ProductListing />} />
+        <Route path="/product-details/:id?" element={<ProductDetail />} />
+      </Routes>
+
+
+
+    </BrowserRouter>
+
+
+
+  </ContextApi>
 );

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../assets/images/logo.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { cartContext } from "../ContextApi/ContextApi";
 
 export default function Header() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Categories"); // default text
+  let { cartItem } = useContext(cartContext);
 
   useEffect(() => {
     axios
@@ -87,6 +89,41 @@ export default function Header() {
                 </ul>
               </li>
             </ul>
+
+            <Link className="m-3  position-relative">
+
+              <button type="button" class="btn btn-primary">
+
+              <i className="bi bi-cart"></i>
+                
+                <span
+                  className="position-absolute top-0 start-100 translate-middle rounded-circle bg-danger d-flex align-items-center justify-content-center"
+                  style={{ width: "24px", height: "24px", fontSize: "12px" }}
+                >
+                  {cartItem.length}
+                  <span className="visually-hidden">unread messages</span>
+                </span>
+
+
+              </button>
+            </Link>
+            <Link className="m-3  position-relative">
+
+              <button type="button" class="btn btn-primary">
+
+              <i className="bi bi-heart"></i> 
+                
+                <span
+                  className="position-absolute top-0 start-100 translate-middle rounded-circle bg-danger d-flex align-items-center justify-content-center"
+                  style={{ width: "24px", height: "24px", fontSize: "12px" }}
+                >
+                  
+                  <span className="visually-hidden">unread messages</span>
+                </span>
+
+
+              </button>
+            </Link>
 
             {/* Sign in & Register buttons */}
             <div className="d-flex align-items-center gap-2 mt-3 mt-lg-0">

@@ -8,7 +8,7 @@ export default function ProductListing() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categorySlug, setCategorySlug] = useState([]);
-  const [priceTo, setPriceTo] = useState(2000); // default max price
+  const [priceTo, setPriceTo] = useState(50000); // default max price
 
   const params = useParams();
 
@@ -79,7 +79,8 @@ export default function ProductListing() {
 
   return (
     <>
-      <Header />
+     <Header />
+     
       <div className="container bg-white">
         <div className="search-section">
           <div className="container-fluid container-xl">
