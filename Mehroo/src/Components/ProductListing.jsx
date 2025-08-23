@@ -51,6 +51,7 @@ export default function ProductListing() {
               price_from: 0,
               price_to: priceTo,
               categories: categorySlug.join(","), // send all selected categories
+              // order: "desc",
             },
           }
         );

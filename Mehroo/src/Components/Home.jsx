@@ -19,7 +19,7 @@ export default function Home() {
       .get("https://wscubetech.co/ecommerce-api/products.php" ,{
         params: {
           limit: 30, // Limit the number of products to 9
-        
+          
         },
       })
       .then((result) => {
@@ -42,7 +42,7 @@ export default function Home() {
 
 
 
-            <h1>productCard</h1>
+          
           {
 
             products.map((data,index)=>{

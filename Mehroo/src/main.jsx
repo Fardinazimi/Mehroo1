@@ -10,6 +10,8 @@ import ProductListing from "./Components/ProductListing";
 import ProductDetail from "./Components/ProductDetail";
 import ContextApi from "./ContextApi/ContextApi";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Cart from "./Components/Cart";
+import Header from "./Components/Header";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -25,6 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Home />} />
         <Route path="/product-listings/:slug?" element={<ProductListing />} />
         <Route path="/product-details/:id?" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
 
 
