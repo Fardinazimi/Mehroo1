@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import Header from "./Header";
+
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Header from "../Components/Header";
 
 export default function ProductListing() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categorySlug, setCategorySlug] = useState([]);
-  const [priceTo, setPriceTo] = useState(50000); // default max price
+  const [priceTo, setPriceTo] = useState(2000); // default max price
 
   const params = useParams();
 
@@ -51,7 +52,6 @@ export default function ProductListing() {
               price_from: 0,
               price_to: priceTo,
               categories: categorySlug.join(","), // send all selected categories
-              // order: "desc",
             },
           }
         );
@@ -80,8 +80,7 @@ export default function ProductListing() {
 
   return (
     <>
-     <Header />
-     
+      <Header />
       <div className="container bg-white">
         <div className="search-section">
           <div className="container-fluid container-xl">

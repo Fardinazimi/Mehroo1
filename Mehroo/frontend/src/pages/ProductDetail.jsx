@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import Header from "./Header";
+
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { cartContext } from "../ContextApi/ContextApi";
 import { toast } from "react-toastify";
+import Header from "../Components/Header";
 
 export default function ProductDetail() {
   var productId = useParams();
@@ -172,8 +173,8 @@ export default function ProductDetail() {
       onChange={handleQuantityChange}
     />
   </div>
-  <div className="col-md-9">
-    <button className="btn addBtn btn-block" onClick={handleAddToCart}>
+  <div className="col-md-9 ">
+    <button className="btn btn-primary" onClick={handleAddToCart}>
       Add to basket
     </button>
   </div>

@@ -1,0 +1,39 @@
+/* Shop dropdown label color when a category is selected */
+.btn.shop-selected {
+    color: #0d6efd !important;
+    border-bottom: 2px solid #0d6efd;
+    font-weight: 600;
+  }
+  
+  /* Active main links */
+  .nav-link.active-link {
+    color: #0d6efd !important;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 2px;
+    font-weight: 600;
+  }
+  
+  /* Dropdown item active */
+  .dropdown-item.active-link {
+    font-weight: 600;
+    color: #0d6efd !important;
+    background-color: #f1f5ff;
+  }
+  
+  /* Cart count bubble */
+  .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+  }
+  

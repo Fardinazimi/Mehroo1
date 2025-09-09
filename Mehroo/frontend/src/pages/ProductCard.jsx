@@ -64,7 +64,11 @@ export default function ProductCard({ column, productData }) {
           ? "productCard col-lg-3 col-sm-2 d-flex flex-column align-items-center justify-content-center product-item my-3 border rounded "
           : "col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-4 border rounded "
       }
+
+     
     >
+
+      
       <div className="product">
         {/* image clickable */}
         <img

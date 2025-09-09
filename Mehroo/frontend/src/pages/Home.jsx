@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ProductCard from "./ProductCard";
-import HeroSlider from "./HeroSlider";
-import Header from "./Header";
+import ProductCard from "../pages/ProductCard";
+import HeroSlider from "../Components/HeroSlider";
+import Header from "../Components/Header";
 import axios from "axios";
+import BestSellers from "../Components/BestSellers";
 
 export default function Home() {
   //   fetch("https://dummyjson.com/products")
@@ -18,7 +19,7 @@ export default function Home() {
     axios
       .get("https://wscubetech.co/ecommerce-api/products.php" ,{
         params: {
-          limit: 30, // Limit the number of products to 9
+          limit: 8, // Limit the number of products to 9
           
         },
       })
@@ -37,6 +38,8 @@ export default function Home() {
     <>
       <Header />
       <HeroSlider />
+      <BestSellers />
+      
       <div className="container bg-white mx-auto">
         <div className="row">
 

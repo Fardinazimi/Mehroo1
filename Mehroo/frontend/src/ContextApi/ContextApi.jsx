@@ -10,9 +10,9 @@ export default function ContextApi({children}) {
 
   let [cartItem, SetCartItem] = useState(getCartItem ? getCartItem : []); // State to hold cart items
   let [wishListItem, setWishListItem] = useState([]);
-
-
   var allData ={cartItem, SetCartItem,wishListItem, setWishListItem}
+
+  
   return (
     <>
     
