@@ -1,12 +1,54 @@
-# React + Vite
+ here is the linke for the youtube :https://www.youtube.com/watch?v=7E6um7NGmeE&t=29595s
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ // backend/server.js
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+const server = express(); // Create an Express application
+// Middleware
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(bodyParser.json());
+server.use(cors());
+
+
+
+
+
+// ! for this two router we alway use the Get method
+// ! method 1
+// Root route
+server.get('/', (req, res) => {
+  res.send('Server is working fine');
+});
+
+
+
+// ! method 2
+// Catch-all route for 404 - Page Not Found
+server.use((req, res) => {
+  res.send('Page not found');
+});
+
+
+
+
+
+
+// MongoDB Atlas connection string (replace PASSWORD with your real password)
+const uri = "mongodb+srv://azimifardeen:azimifardeen@cluster0.qypxmda.mongodb.net/Mehroo?retryWrites=true&w=majority&appName=Cluster0";
+
+// Connect to MongoDB and start server
+mongoose.connect(uri)
+  .then(() => {
+    console.log("✅ Connected to MongoDB Atlas");
+    server.listen(5000, () => {
+      console.log("🚀 Server is running on http://localhost:5000");
+    });
+  })
+  .catch(err => console.error("❌ MongoDB connection error:", err));

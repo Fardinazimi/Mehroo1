@@ -1,0 +1,39 @@
+/* About Page Styling */
+.about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .about-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .about-img {
+    transition: transform 0.3s ease;
+  }
+  
+  .about-img:hover {
+    transform: scale(1.05);
+  }
+  
+  .about-values {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+    color: #333;
+  }
+  
+  .about-values li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .about-cta h3 {
+    font-weight: 600;
+  }
+  
+  .about-cta p {
+    color: #555;
+  }
+  

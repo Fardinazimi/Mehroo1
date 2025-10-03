@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import Header from "./Header";
+
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Header from "../Components/Header";
 
 export default function ProductListing() {
   const [products, setProducts] = useState([]);
